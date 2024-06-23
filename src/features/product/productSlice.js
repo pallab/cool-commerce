@@ -64,8 +64,8 @@ export const productSlice = createSlice({
       .addCase(fetchAllProductsByFilterAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.products = action.payload;
-        state.categories = categoryParser(action.payload);
-        state.brands = brandParser(action.payload);
+        // state.categories = [...new Set([...state.categories, ...categoryParser(action.payload)])];
+        // state.brands = brandParser(action.payload);
       });
   },
 });
